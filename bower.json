@@ -1,0 +1,26 @@
+{
+  "name": "gallery-portfolio",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0",
+    "jquery-parallax": "~1.1.3",
+    "wow": "~1.1.2",
+    "animate.css": "~3.4.0",
+    "blueimp-bootstrap-image-gallery": "~3.1.3",
+    "jquery-ui": "jqueryui#~1.11.4",
+    "photoswipe": "~4.1.0",
+    "masonry": "~3.3.2"
+  }
+}
