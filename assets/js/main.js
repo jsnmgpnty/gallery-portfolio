@@ -164,17 +164,17 @@ $(function () {
 	});
 });
 
-var map;
-function initMap() {
-	var coordinates = {lat: 14.6769066, lng: 121.0304979};
-	map = new google.maps.Map(document.getElementById('map'), {
-		center: coordinates,
-		zoom: 16
-    });
+// var map;
+// function initMap() {
+	// var coordinates = {lat: 14.6769066, lng: 121.0304979};
+	// map = new google.maps.Map(document.getElementById('map'), {
+		// center: coordinates,
+		// zoom: 16
+    // });
 	
-	var marker = new google.maps.Marker({
-		position: coordinates,
-		map: map,
-		title: 'I\'m here!'
-	});
-};
+	// var marker = new google.maps.Marker({
+		// position: coordinates,
+		// map: map,
+		// title: 'I\'m here!'
+	// });
+// };
