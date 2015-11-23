@@ -1,0 +1,15 @@
+/* Lobster */
+@font-face {
+	font-family: 'Lobster';
+	src: url('../fonts/Lobster.eot');
+	src: url('../fonts/Lobster.woff') format('woff'), 
+         url('../fonts/Lobster.ttf') format('truetype');
+}
+
+/* Cafe and Brewery */
+@font-face {
+	font-family: 'CafeBrewery';
+	src: url('../fonts/cafeandbrewery.eot');
+	src: url('../fonts/cafeandbrewery.woff') format('woff'), 
+         url('../fonts/cafeandbrewery.ttf') format('truetype');
+}
