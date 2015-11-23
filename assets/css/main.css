@@ -311,8 +311,12 @@ h4.title {
 		
 		@media screen and (max-width: 767px) {
 			#gallery .grid .grid-item {
-				width: 50%;
+				width: 100%;
 			}
+			
+				#gallery .grid img {
+					height: auto;
+				}
 			
 			#gallery .grid .grid-item--width2 { 
 				width: 100%;
@@ -321,8 +325,12 @@ h4.title {
 		
 		@media screen and (min-width: 768px) and (max-width: 992px) {
 			#gallery .grid .grid-item {
-				width: 50%;
+				width: 100%;
 			}
+			
+				#gallery .grid img {
+					height: auto;
+				}
 			
 			#gallery .grid .grid-item--width2 { 
 				width: 100%;
