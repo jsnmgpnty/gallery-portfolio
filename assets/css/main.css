@@ -21,8 +21,13 @@ html, body {
 		border-color: #666;
 	}
 	
-	.navbar-brand .logo {
-		width: 60px;
+	.navbar-brand {
+		padding: 0 15px;
+	}
+	
+	.brand-logo {
+		margin: -4px 0;
+		width: 130px;
 	}
 	
 .well {
@@ -58,15 +63,15 @@ h4.title {
 }
 
 .title span {
-    background: none repeat scroll 0 0 #3ABEB4;
+    background: none repeat scroll 0 0 #4f6c8d;
     color: #FFFFFF;
     padding: 5px;
 	font-size: 0.8em;
     -webkit-border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     border-radius: 3px 3px 3px 3px;
-    text-shadow: 1px 1px 0px #1f7a71 !important;
-    filter: dropshadow(color=#1f7a71,offx=2,offy=1) !important;
+    text-shadow: 1px 1px 0px #4f6c8d !important;
+    filter: dropshadow(color=#4f6c8d,offx=2,offy=1) !important;
 }
 
 .overlay {
@@ -98,7 +103,7 @@ h4.title {
 	}
 	
 		#content-nav li a {
-			color: #3ABEB4;
+			color: #4f6c8d;
 		}
 		
 .body-content {
@@ -168,7 +173,7 @@ h4.title {
 		#services .service-item h2 {
 			padding: 15px 0;
 			text-align: center;
-			background: #3ABEB4;
+			background: #4f6c8d;
 			color: #fff;
 			margin: 0;
 			border-bottom: 1px dashed #fff;
@@ -388,8 +393,8 @@ h4.title {
 	
 		#contact .contact-form .btn {
 			padding: 6px 15px;
-			background: #3ABEB4;
-			border-color: #2F948C;
+			background: #4f6c8d;
+			border-color: #394D63;
 			font-family: "Lobster", "Arial", "Helvetica";
 			color: #fff;
 			border-radius: 0;
