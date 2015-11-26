@@ -1,0 +1,278 @@
+// borders
+$base-border-radius: 4;
+$default-border-radius: 4px;
+$can-round-element: true;
+
+// padding
+$base-padding: 15;
+$default-padding: 15px;
+
+// margin
+$base-margin: 15;
+$default-margin: 15px;
+
+// darkening values
+$hover-darken-value: 5%;
+$border-darken-value: 5%;
+
+// base colors
+$dark-color: #000;
+$light-color: #fff;
+$base-grayscale-color: #999;
+$light-border-color: lighten($base-grayscale-color, 30%);
+$dark-border-color: darken($base-grayscale-color, 20%);
+$block-color: #fff;
+
+$main-background-color: #F1EED9;
+$main-background: #F1EED9;
+
+$main-color: #382313;
+$main-stroke-color: #382313;
+$primary-color: #58351A;
+$primary-stroke-color: #58351A;
+$secondary-color: #F7EDBF;
+$secondary-stroke-color: #F7EDBF;
+$tertiary-color: #F1EED9;
+$tertiary-stroke-color: #F1EED9;
+
+// mixin size: width; height;
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// mixin padding: top, right, bottom, left;
+@mixin position($value, $top, $right: $top, $bottom: $top, $left: $top) {
+    @if ($value != null) {
+        position: $value;
+    }
+
+    @if ($top != null) {
+        top: $top;
+    }
+
+    @if ($right != null) {
+        right: $right;
+    }
+
+    @if ($bottom != null) {
+        bottom: $bottom;
+    }
+
+    @if ($left != null) {
+        left: $left;
+    }
+}
+
+// mixin padding: top, right, bottom, left;
+@mixin padding($top, $right: $top, $bottom: $top, $left: $top) {
+    @if ($top != null) {
+        padding-top: $top;
+    }
+
+    @if ($right != null) {
+        padding-right: $right;
+    }
+
+    @if ($bottom != null) {
+        padding-bottom: $bottom;
+    }
+
+    @if ($left != null) {
+        padding-left: $left;
+    }
+}
+
+// mixin margin: top, right, bottom, left;
+@mixin margin($top, $right: $top, $bottom: $top, $left: $top) {
+    @if ($top != null) {
+        margin-top: $top;
+    }
+
+    @if ($right != null) {
+        margin-right: $right;
+    }
+
+    @if ($bottom != null) {
+        margin-bottom: $bottom;
+    }
+
+    @if ($left != null) {
+        margin-left: $left;
+    }
+}
+
+// mixin opacity: value;
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// mixin clean ul
+@mixin clean-list {
+    list-style-type: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+// mixin ellipsis text
+@mixin ellipsis-text {
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// mixin mediaqueries: breakpoint value;
+@mixin media($point) {
+    @if $point == lg {
+        @media screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $point == md {
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+    @else if $point == sm {
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+            @content;
+        }
+    }
+    @else if $point == xs {
+        @media screen and (max-width: 767px) {
+            @content;
+        }
+    }
+}
+
+// mixin center
+@mixin center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+// mixin borders: size, type, color, top, left, bottom, right;
+@mixin borders ($size, $type, $color, $top, $right: $top, $bottom: $top, $left: $top) {
+    @if ($size == null) {
+        $size: 1px;
+    }
+
+    @if ($type == null) {
+        $type: solid;
+    }
+
+    @if ($color == null) {
+        $color: $light-border-color;
+    }
+
+    @if ($size == empty or $size == 0) {
+        $border-value: 0;
+    }
+
+    $border-value: $size;
+    $arr-params: ($type, $color);
+
+    @each $param in $arr-params {
+        @if ($param != empty) {
+            $border-value: $border-value $param;
+        }
+    }
+
+    @if ($top != null and $top) {
+        border-top: $border-value;
+    }
+
+    @if ($right != null and $right) {
+        border-right: $border-value;
+    }
+
+    @if ($bottom != null and $bottom) {
+        border-bottom: $border-value;
+    }
+
+    @if ($left != null and $left) {
+        border-left: $border-value;
+    }
+}
+
+// mixin border-radius: type
+@mixin border-radius ($radius-size, $important, $top-left: true, $top-right: $top-left, $bottom-right: $top-left, $bottom-left: $top-left) {
+    $border-radius-value: $base-border-radius;
+
+    @if ($radius-size == null or $radius-size == xs) {
+        $border-radius-value: $default-border-radius;
+    }
+    @elseif ($radius-size == sm) {
+        $border-radius-value: unquote(($base-border-radius * 2) + 'px');
+    }
+    @elseif ($radius-size == md) {
+        $border-radius-value: unquote(($base-border-radius * 3) + 'px');
+    }
+    @elseif ($radius-size == lg) {
+        $border-radius-value: unquote(($base-border-radius * 4) + 'px');
+    }
+    @elseif ($radius-size == round and $can-round-element == true) {
+        $border-radius-value: 100%;
+    }
+    @else {
+        $border-radius-value: $default-border-radius;
+    }
+
+    @if ($important != null and $important == false) {
+        @if ($top-left != null and $top-left) {
+            border-top-left-radius: $border-radius-value;
+        }
+
+        @if ($top-right != null and $top-right) {
+            border-top-right-radius: $border-radius-value;
+        }
+
+        @if ($bottom-left != null and $bottom-left) {
+            border-bottom-left-radius: $border-radius-value;
+        }
+
+        @if ($bottom-right != null and $bottom-right) {
+            border-bottom-right-radius: $border-radius-value;
+        }
+    }
+    @elseif ($important == null or $important == true) {
+        @if ($top-left != null and $top-left) {
+            border-top-left-radius: $border-radius-value !important;
+        }
+
+        @if ($top-right != null and $top-right) {
+            border-top-right-radius: $border-radius-value !important;
+        }
+
+        @if ($bottom-left != null and $bottom-left) {
+            border-bottom-left-radius: $border-radius-value !important;
+        }
+
+        @if ($bottom-right != null and $bottom-right) {
+            border-bottom-right-radius: $border-radius-value !important;
+        }
+    }
+}
+
+// mixin clear fix floats
+@mixin clear-fix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+// mixin background-opacity
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color;
+    background: rgba($color, $opacity);
+}

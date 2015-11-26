@@ -1,0 +1,82 @@
+@import 'variables';
+
+html, body {
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
+.navbar {
+	margin-bottom: 0;
+	background: $main-color;
+	border-radius: 0;
+	
+	.navbar-brand {
+		font-family: "Lobster", "Arial", "Helvetica";
+		@include padding(0, $default-padding, 0, $default-padding);
+		
+		span {
+			@include margin(null, null, null, $default-margin / 3);
+		}
+	}
+	
+	.navbar-inverse {
+		border-color: darken($main-color, $border-darken-value);
+	}
+	
+	.brand-logo {
+		margin: -4px 0;
+		width: 130px;
+	}
+}
+	
+.well {
+	@include padding(0);
+	@include borders(1px, solid, darken($tertiary-color, $border-darken-value));
+	@include border-radius($default-border-radius, true, true);
+	background: $tertiary-color;
+    -webkit-box-shadow: 1px 1px 0px 2px rgba(205,205,205,.3);
+    -moz-box-shadow: 1px 1px 0px 2px rgba(205,205,205,.3);
+    box-shadow: 1px 1px 0px 2px rgba(205,205,205,.3);
+}
+
+h1 {
+	font-family: "Lobster", "Arial", "Helvetica";
+	
+	&.title {
+		font-size: 3em;
+	}
+}
+
+h1, h2, h3, h4, h5, p, label {
+	font-family: "Lobster", "Arial", "Helvetica";
+}
+
+.title {
+	span {
+		@include padding($default-padding / 3);
+	}
+}
+
+h1 {
+	&.title {
+		font-size: 3em;
+	}
+}
+
+h2 {
+	&.title {
+		font-size: 2.15em;
+	}
+}
+
+h3 {
+	&.title {
+		font-size: 1.7em;
+	}
+}
+
+h4 {
+	&.title {
+		font-size: 1.35em;
+	}
+}
